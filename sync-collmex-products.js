@@ -1,11 +1,9 @@
+const getCollmexProducts = require('./helpers/get-collmex-products.js')
+const mapProductsProps = require('./helpers/map-products-props.js')
+const setProducts = require('./helpers/set-products.js')
+
 module.exports.handler = async (event) => {
-  return {
-    statusCode: 200,
-    headers: {
-      'Access-Control-Allow-Origin': '*'
-    },
-    body: JSON.stringify({
-      message: 'Your lambda is running!'
-    })
-  }
+  return await getCollmexProducts()
+    .then(mapProductsProps)
+    .then(setProducts)
 }
