@@ -3,7 +3,8 @@ const mapProductsProps = require('./helpers/map-products-props.js')
 const setProducts = require('./helpers/set-products.js')
 
 module.exports.handler = async (event) => {
-  return await getCollmexProducts()
+  await getCollmexProducts()
     .then(mapProductsProps)
     .then(setProducts)
+  return true
 }
