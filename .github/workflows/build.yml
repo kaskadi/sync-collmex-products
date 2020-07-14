@@ -6,7 +6,10 @@ on:
       - 'dev'
     types: [opened, reopened, edited, synchronize]
     paths:
-      - 'template-kaskadi-lambda.js'
+      - 'sync-collmex-products.js'
+      - 'helpers/**'
+      - 'data/**'
+      - 'layer/**'
       - 'test/**'
       - 'package.json'
 jobs:

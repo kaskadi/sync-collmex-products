@@ -7,8 +7,11 @@ on:
       - 'release/**'
     paths:
       - 'serverless.yml'
-      - 'template-kaskadi-lambda.js'
+      - 'sync-collmex-products.js'
+      - 'helpers/**'
+      - 'data/**'
       - 'layer/**'
+      - 'package.json'
 jobs:
   deploy:
     runs-on: ubuntu-latest
