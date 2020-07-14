@@ -5,11 +5,12 @@ const es = require('aws-es-client')({
 })
 
 module.exports = async (products) => {
-  return es.bulk({
-    index: 'products',
-    refresh: true,
-    body: await getBulkBody(products)
-  })
+  return await getBulkBody(products)
+  // es.bulk({
+  //   index: 'products',
+  //   refresh: true,
+  //   body: await getBulkBody(products)
+  // })
 }
 
 async function getBulkBody (products) {
@@ -22,7 +23,7 @@ function getOpBodyDuplet (esProducts) {
     const id = product.ean
     const opOpts = { _id: id, _index: "products" }
     const productExists = esProducts.filter(product => product._id === id).length > 0
-    op = productExists ? op['update'] = opOpts : op['index'] = opOpts
+    productExists ? op['update'] = opOpts : op['index'] = opOpts
     const body = productExists ? { doc: product } : product
     return [op, body]
   }

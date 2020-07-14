@@ -212,11 +212,11 @@ module.exports = {
     type: Boolean
   },
   'Amazon-ASIN': {
-    field: 'inactive',
+    field: 'amazonASINS',
     type: Array
   },
   'eBay-Artikelnummer': {
-    field: 'inactive',
+    field: 'eBayArticleNumber',
     type: Array
   },
   Direktlieferung: {
