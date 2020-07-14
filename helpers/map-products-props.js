@@ -1,14 +1,7 @@
 const propsMap = require('../data/props-map.js')
 
 module.exports = (products) => {
-  return products.map(product => {
-    return {
-      title: '',
-      sku: '',
-      stocks: {},
-      ...Object.fromEntries(mapCollmexData(Object.entries(product)))
-    }
-  })
+  return products.map(product => Object.fromEntries(mapCollmexData(Object.entries(product))))
 }
 
 function mapCollmexData (productEntries) {
