@@ -19,11 +19,10 @@ async function getBulkBody (products) {
 
 function getOpBodyDuplet (esProducts) {
   return product => {
-    let op = {}
     const id = product.ean
-    const opOpts = { _id: id, _index: "products" }
+    const opOpts = { _id: id, _index: 'products' }
     const productExists = esProducts.filter(product => product._id === id).length > 0
-    productExists ? op['update'] = opOpts : op['index'] = opOpts
+    const op = productExists ? { update: opOpts } : { index: opOpts }
     const body = productExists ? { doc: product } : product
     return [op, body]
   }
@@ -40,7 +39,7 @@ async function getAllProducts () {
     result = [...result, ...searchData.hits.hits]
   }
   return result
-} 
+}
 
 function search (from, size) {
   return es.search({

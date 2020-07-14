@@ -1,9 +1,9 @@
 const collmex = require('collmex-client')({
-  User : process.env.CMX_CLIENT_USER,
-  Password : process.env.CMX_CLIENT_PWD,
-  "CMXKundennummer" : process.env.CMX_CUST_ID,
-  "Firma_Nr" : 1,
-  "Systemname" : "collmex-client"
+  User: process.env.CMX_CLIENT_USER,
+  Password: process.env.CMX_CLIENT_PWD,
+  CMXKundennummer: process.env.CMX_CUST_ID,
+  Firma_Nr: 1,
+  Systemname: 'collmex-client'
 })
 
 module.exports = () => {
