@@ -39,6 +39,7 @@ functions:
   SyncCollmexProducts:
     handler: sync-collmex-products.handler
     name: ${self:service.name}
+    timeout: 60
     layers:
       - { Ref: SyncCollmexProductsLayerLambdaLayer}
     package:
@@ -50,3 +51,10 @@ functions:
       - schedule:
           rate: cron(0 7 ? * * *)
           enabled: true
+    environment:
+      CMX_CLIENT_USER: ${env:CMX_CLIENT_USER}
+      CMX_CLIENT_PWD: ${env:CMX_CLIENT_PWD}
+      CMX_CUST_ID: ${env:CMX_CUST_ID}
+      ES_ID: ${env:ES_ID}
+      ES_SECRET: ${env:ES_SECRET}
+      ES_ENDPOINT: ${env:ES_ENDPOINT}
