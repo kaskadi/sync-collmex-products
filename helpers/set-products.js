@@ -5,12 +5,11 @@ const es = require('aws-es-client')({
 })
 
 module.exports = async (products) => {
-  return await getBulkBody(products)
-  // es.bulk({
-  //   index: 'products',
-  //   refresh: true,
-  //   body: await getBulkBody(products)
-  // })
+  return es.bulk({
+    index: 'products',
+    refresh: true,
+    body: await getBulkBody(products)
+  })
 }
 
 async function getBulkBody (products) {
