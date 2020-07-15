@@ -32,7 +32,7 @@ async function getAllProducts () {
   const size = 500
   let searchData = await search(from, size)
   let result = searchData.hits.hits
-  while (searchData.hits.total.value === size) {
+  while (searchData.hits.hits.length === size) {
     from += size
     searchData = await search(from, size)
     result = [...result, ...searchData.hits.hits]
