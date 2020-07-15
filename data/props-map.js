@@ -164,7 +164,7 @@ module.exports = {
     type: Boolean
   },
   Dateiname: {
-    field: 'filename',
+    field: 'fileName',
     type: String
   },
   Keywords: {
