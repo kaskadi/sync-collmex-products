@@ -13,7 +13,7 @@ module.exports = async (products) => {
 }
 
 async function getBulkBody (products) {
-  return products.map(getOpBodyDuplet(await getAllProducts()))
+  return products.flatMap(getOpBodyDuplet(await getAllProducts()))
 }
 
 function getOpBodyDuplet (esProducts) {
