@@ -6,5 +6,6 @@ module.exports.handler = async (event) => {
   await getCollmexProducts()
     .then(mapProductsProps)
     .then(setProducts)
+    .finally(console.log)
   return true
 }
