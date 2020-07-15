@@ -180,7 +180,7 @@ module.exports = {
     type: String
   },
   'Bild-URL': {
-    field: 'imageUrl',
+    field: 'image',
     type: String
   },
   'Grundpreis-Menge-1': {
