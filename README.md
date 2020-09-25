@@ -18,8 +18,39 @@
 
 [![](https://img.shields.io/lgtm/grade/javascript/github/kaskadi/sync-collmex-products?label=code%20quality&logo=LGTM)](https://lgtm.com/projects/g/kaskadi/sync-collmex-products/?mode=list&logo=LGTM)
 
-:point_right: **Badges here** :point_left:
+<!-- You can add badges inside of this section if you'd like -->
 
 ****
 
-:point_down: **Your documentation here** :point_down:
+<!-- automatically generated documentation will be placed in here -->
+# Resources documentation
+
+The following lambda functions are defined in this repository:
+- [sync-collmex-products](#sync-collmex-products)
+
+The following layers are defined in this repository:
+- [sync-collmex-products-layer](#sync-collmex-products-layer)
+
+## sync-collmex-products <a name="sync-collmex-products"></a>
+
+|          Name         | Sources                    | Timeout |                Handler                | Layers                                                                        |
+| :-------------------: | :------------------------- | :-----: | :-----------------------------------: | :---------------------------------------------------------------------------- |
+| sync-collmex-products | <ul><li>SCHEDULE</li></ul> |   60s   | [handler](./sync-collmex-products.js) | <ul><li>[sync-collmex-products-layer](#sync-collmex-products-layer)</li></ul> |
+
+See [configuration file](./serverless.yml) for more details.
+
+## sync-collmex-products-layer <a name="sync-collmex-products-layer"></a>
+
+### Description
+
+Layer for sync-collmex-products
+
+### Dependencies
+
+- `aws-es-client`, version: `^1.0.1` ([see on NPM](https://www.npmjs.com/package/aws-es-client))
+- `collmex-client`, version: `^1.0.5` ([see on NPM](https://www.npmjs.com/package/collmex-client))
+
+See [configuration file](./serverless.yml) for more details.
+<!-- automatically generated documentation will be placed in here -->
+
+<!-- You can customize this template as you'd like! -->
