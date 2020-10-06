@@ -12,6 +12,13 @@ on:
       - 'layer/**'
       - 'test/**'
       - 'package.json'
+env:
+  CMX_CLIENT_USER: ${{ secrets.CMX_CLIENT_USER }}
+  CMX_CLIENT_PWD: ${{ secrets.CMX_CLIENT_PWD }}
+  CMX_CUST_ID: ${{ secrets.CMX_CUST_ID }}
+  ES_ID: ${{ secrets.ES_ID }}
+  ES_SECRET: ${{ secrets.ES_SECRET }}
+  ES_ENDPOINT: ${{ secrets.ES_ENDPOINT }}
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,10 +28,3 @@ jobs:
       run: npm i
     - name: Test
       run: npm test
-      env:
-        CMX_CLIENT_USER: ${{ secrets.CMX_CLIENT_USER }}
-        CMX_CLIENT_PWD: ${{ secrets.CMX_CLIENT_PWD }}
-        CMX_CUST_ID: ${{ secrets.CMX_CUST_ID }}
-        ES_ID: ${{ secrets.ES_ID }}
-        ES_SECRET: ${{ secrets.ES_SECRET }}
-        ES_ENDPOINT: ${{ secrets.ES_ENDPOINT }}
