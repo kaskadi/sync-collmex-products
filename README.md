@@ -47,8 +47,8 @@ Layer for sync-collmex-products
 
 ### Dependencies
 
-- `aws-es-client`, version: `^1.0.1` ([see on NPM](https://www.npmjs.com/package/aws-es-client))
-- `collmex-client`, version: `^1.0.5` ([see on NPM](https://www.npmjs.com/package/collmex-client))
+- `aws-es-client`, version: `1.0.1` ([see on NPM](https://www.npmjs.com/package/aws-es-client))
+- `collmex-client`, version: `1.0.5` ([see on NPM](https://www.npmjs.com/package/collmex-client))
 
 See [configuration file](./serverless.yml) for more details.
 
